@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TalentBridge — Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-left">
+      <div class="logo">⚡ TalentBridge</div>
+    </div>
+    <div class="topbar-right">
+      <div class="user-info">
+        <div class="user-avatar" id="userAvatar">U</div>
+        <span id="userName">User</span>
+      </div>
+      <button class="signout-btn" onclick="signOut()">Sign Out</button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav class="nav-menu">
+        <a class="nav-item active" onclick="showSection('profile')" data-section="profile"><span class="nav-icon">👤</span><span>Profile</span></a>
+        <a class="nav-item" onclick="showSection('search')" data-section="search"><span class="nav-icon">🔍</span><span>Search Jobs</span></a>
+        <a class="nav-item" onclick="showSection('applied')" data-section="applied"><span class="nav-icon">📋</span><span>Applied Jobs</span></a>
+        <a class="nav-item" onclick="showSection('ai')" data-section="ai"><span class="nav-icon">🤖</span><span>AI Recommendations</span></a>
+        <a class="nav-item" onclick="showSection('references')" data-section="references"><span class="nav-icon">📚</span><span>References</span></a>
+      </nav>
+    </aside>
+
+    <main class="main-content">
+
+      <!-- PROFILE -->
+      <section id="profileSection" class="section active">
+        <div class="section-header"><h2>My Profile</h2><p>Your professional information</p></div>
+        <div class="profile-grid">
+          <div class="profile-card">
+            <div class="profile-avatar-big" id="profileAvatar">U</div>
+            <h3 id="profileName">Loading...</h3>
+            <p id="profileUsername" class="profile-username">@username</p>
+            <div class="profile-info">
+              <div class="info-row"><span>📧</span><span id="profileEmail">-</span></div>
+              <div class="info-row"><span>📱</span><span id="profilePhone">-</span></div>
+              <div class="info-row"><span>🎓</span><span id="profileYear">-</span></div>
+            </div>
+          </div>
+          <div class="profile-details">
+            <div class="detail-card"><h4>Skills</h4><div id="skillsList" class="skills-container"></div></div>
+            <div class="detail-card"><h4>Experience</h4><p id="profileExperience" class="experience-text">-</p></div>
+            <div class="detail-card"><h4>Documents</h4><div id="documentsSection" class="docs-grid"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCH JOBS -->
+      <section id="searchSection" class="section">
+        <div class="section-header"><h2>Search Jobs</h2><p>Browse from 50,000+ opportunities</p></div>
+        <div class="search-bar-area">
+          <div class="search-input-wrap">
+            <span>🔍</span>
+            <input type="text" id="searchInput" placeholder="Search by job title, skills, company..." onkeyup="debounceSearch()"/>
+          </div>
+          <div class="filters-row">
+            <select id="filterLocation" onchange="searchJobs()"><option value="">All Locations</option></select>
+            <select id="filterType" onchange="searchJobs()">
+              <option value="">All Types</option>
+              <option>Full-time</option><option>Part-time</option>
+              <option>Contract</option><option>Internship</option>
+            </select>
+            <select id="filterMode" onchange="searchJobs()">
+              <option value="">All Modes</option>
+              <option>Remote</option><option>On-site</option><option>Hybrid</option>
+            </select>
+            <select id="filterIndustry" onchange="searchJobs()"><option value="">All Industries</option></select>
+          </div>
+        </div>
+        <div id="jobCount" class="job-count"></div>
+        <div id="searchResults" class="jobs-grid"></div>
+        <div id="pagination" class="pagination"></div>
+      </section>
+
+      <!-- APPLIED JOBS -->
+      <section id="appliedSection" class="section">
+        <div class="section-header"><h2>Applied Jobs</h2><p>Track your application status</p></div>
+        <div id="appliedList" class="applied-list"></div>
+      </section>
+
+      <!-- AI RECOMMENDATIONS -->
+      <section id="aiSection" class="section">
+        <div class="section-header"><h2>AI Recommendations 🤖</h2><p>Personalized job matches based on your skills</p></div>
+        <div id="aiResults" class="ai-container"></div>
+      </section>
+
+      <!-- REFERENCES -->
+      <section id="referencesSection" class="section">
+        <div class="section-header"><h2>Learning References 📚</h2><p>YouTube resources to upskill yourself</p></div>
+        <div class="references-grid">
+          <div class="ref-category">
+            <div class="ref-icon">💻</div>
+            <h3>Frontend Development</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=G3e-cpL7ofc" target="_blank" class="ref-link">📺 HTML & CSS Full Course</a>
+              <a href="https://www.youtube.com/watch?v=jS4aFq5-91M" target="_blank" class="ref-link">📺 JavaScript Full Course</a>
+              <a href="https://www.youtube.com/watch?v=b9eMGE7QtTk" target="_blank" class="ref-link">📺 React JS Complete Guide</a>
+            </div>
+          </div>
+          <div class="ref-category">
+            <div class="ref-icon">🖥</div>
+            <h3>Full Stack Development</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=7CqJlxBYj-M" target="_blank" class="ref-link">📺 MERN Stack Full Course</a>
+              <a href="https://www.youtube.com/watch?v=Oe421EPjeBE" target="_blank" class="ref-link">📺 Node.js Complete Course</a>
+              <a href="https://www.youtube.com/watch?v=ofme2o29ngU" target="_blank" class="ref-link">📺 MongoDB Tutorial</a>
+            </div>
+          </div>
+          <div class="ref-category">
+            <div class="ref-icon">📊</div>
+            <h3>Data Analytics</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=r-uOLxNrNk8" target="_blank" class="ref-link">📺 Data Analysis with Python</a>
+              <a href="https://www.youtube.com/watch?v=HXV3zeQKqGY" target="_blank" class="ref-link">📺 SQL Complete Course</a>
+              <a href="https://www.youtube.com/watch?v=AGrl-H87pRU" target="_blank" class="ref-link">📺 Power BI Full Tutorial</a>
+            </div>
+          </div>
+          <div class="ref-category">
+            <div class="ref-icon">🤖</div>
+            <h3>Data Science & ML</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=GwIo3gDZCVQ" target="_blank" class="ref-link">📺 Machine Learning Course</a>
+              <a href="https://www.youtube.com/watch?v=tPYj3fFJGjk" target="_blank" class="ref-link">📺 TensorFlow Full Course</a>
+              <a href="https://www.youtube.com/watch?v=PhYlzvQMZSE" target="_blank" class="ref-link">📺 Data Science Roadmap</a>
+            </div>
+          </div>
+          <div class="ref-category">
+            <div class="ref-icon">📈</div>
+            <h3>Business Analytics</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=WGDPgMRRB1E" target="_blank" class="ref-link">📺 Business Analysis Tutorial</a>
+              <a href="https://www.youtube.com/watch?v=Vl0H-qTclOg" target="_blank" class="ref-link">📺 Excel for Business</a>
+              <a href="https://www.youtube.com/watch?v=Z9QbYZh1YXY" target="_blank" class="ref-link">📺 Agile Methodology</a>
+            </div>
+          </div>
+          <div class="ref-category">
+            <div class="ref-icon">☁️</div>
+            <h3>Cloud & DevOps</h3>
+            <div class="ref-links">
+              <a href="https://www.youtube.com/watch?v=ulprqHHWlng" target="_blank" class="ref-link">📺 AWS Full Course</a>
+              <a href="https://www.youtube.com/watch?v=fqMOX6JJhGo" target="_blank" class="ref-link">📺 Docker Complete Guide</a>
+              <a href="https://www.youtube.com/watch?v=X48VuDVv0do" target="_blank" class="ref-link">📺 Kubernetes Tutorial</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
