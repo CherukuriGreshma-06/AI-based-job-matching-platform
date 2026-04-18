@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "title": "Frontend Developer",
+    "company": "TechNova Solutions",
+    "location": "Bangalore, India",
+    "salary": "₹6-10 LPA",
+    "type": "Full-time",
+    "skills": ["HTML", "CSS", "JavaScript", "React", "Git"],
+    "description": "Build responsive UIs and collaborate with design teams to create stunning web experiences.",
+    "experience": "0-2 years",
+    "references": {
+      "youtube": [
+        {"title": "HTML & CSS Full Course", "url": "https://www.youtube.com/watch?v=G3e-cpL7ofc"},
+        {"title": "JavaScript Full Course", "url": "https://www.youtube.com/watch?v=jS4aFq5-91M"},
+        {"title": "React JS Full Course", "url": "https://www.youtube.com/watch?v=b9eMGE7QtTk"}
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "title": "Full Stack Developer",
+    "company": "InnovateTech",
+    "location": "Hyderabad, India",
+    "salary": "₹8-15 LPA",
+    "type": "Full-time",
+    "skills": ["React", "Node.js", "MongoDB", "Express", "JavaScript", "REST API"],
+    "description": "Work on end-to-end product development from database design to beautiful frontend UIs.",
+    "experience": "1-3 years",
+    "references": {
+      "youtube": [
+        {"title": "MERN Stack Full Course", "url": "https://www.youtube.com/watch?v=7CqJlxBYj-M"},
+        {"title": "Node.js Full Course", "url": "https://www.youtube.com/watch?v=Oe421EPjeBE"},
+        {"title": "MongoDB Tutorial", "url": "https://www.youtube.com/watch?v=ofme2o29ngU"}
+      ]
+    }
+  },
+  {
+    "id": 3,
+    "title": "Data Analyst",
+    "company": "DataSphere Analytics",
+    "location": "Mumbai, India",
+    "salary": "₹5-9 LPA",
+    "type": "Full-time",
+    "skills": ["Python", "SQL", "Excel", "Power BI", "Statistics", "Tableau"],
+    "description": "Analyze large datasets to extract business insights and create compelling dashboards.",
+    "experience": "0-2 years",
+    "references": {
+      "youtube": [
+        {"title": "Data Analysis with Python", "url": "https://www.youtube.com/watch?v=r-uOLxNrNk8"},
+        {"title": "SQL Full Course", "url": "https://www.youtube.com/watch?v=HXV3zeQKqGY"},
+        {"title": "Power BI Tutorial", "url": "https://www.youtube.com/watch?v=AGrl-H87pRU"}
+      ]
+    }
+  },
+  {
+    "id": 4,
+    "title": "Data Scientist",
+    "company": "AI Ventures",
+    "location": "Pune, India",
+    "salary": "₹10-18 LPA",
+    "type": "Full-time",
+    "skills": ["Python", "Machine Learning", "TensorFlow", "Statistics", "SQL", "Deep Learning"],
+    "description": "Build predictive models and ML pipelines to solve complex business problems.",
+    "experience": "1-3 years",
+    "references": {
+      "youtube": [
+        {"title": "Machine Learning Course", "url": "https://www.youtube.com/watch?v=GwIo3gDZCVQ"},
+        {"title": "TensorFlow Full Course", "url": "https://www.youtube.com/watch?v=tPYj3fFJGjk"},
+        {"title": "Data Science Roadmap", "url": "https://www.youtube.com/watch?v=PhYlzvQMZSE"}
+      ]
+    }
+  },
+  {
+    "id": 5,
+    "title": "Business Analyst",
+    "company": "ConsultPro",
+    "location": "Delhi, India",
+    "salary": "₹6-12 LPA",
+    "type": "Full-time",
+    "skills": ["Excel", "SQL", "Power BI", "Communication", "Problem Solving", "Agile"],
+    "description": "Bridge business needs and technical solutions through data-driven analysis.",
+    "experience": "0-2 years",
+    "references": {
+      "youtube": [
+        {"title": "Business Analysis Tutorial", "url": "https://www.youtube.com/watch?v=WGDPgMRRB1E"},
+        {"title": "Excel for Business", "url": "https://www.youtube.com/watch?v=Vl0H-qTclOg"},
+        {"title": "Agile Methodology", "url": "https://www.youtube.com/watch?v=Z9QbYZh1YXY"}
+      ]
+    }
+  },
+  {
+    "id": 6,
+    "title": "Backend Developer",
+    "company": "CloudBase Systems",
+    "location": "Chennai, India",
+    "salary": "₹7-13 LPA",
+    "type": "Full-time",
+    "skills": ["Node.js", "Python", "MongoDB", "PostgreSQL", "REST API", "Docker"],
+    "description": "Design and build scalable server-side applications and micro
